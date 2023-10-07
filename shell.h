@@ -92,7 +92,7 @@ typedef struct passinfo
 } info_t;
 
 #define INFO_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, /
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
 /**
@@ -107,7 +107,7 @@ typedef struct builtin
 } builtin_table;
 
 /* PARSER FILE */
-int is_cmd(info_t *, char **);
+int is_cmd(info_t *, char *);
 char *find_path(info_t *, char *, char *);
 char *dup_chars(char *, int, int);
 
@@ -139,9 +139,9 @@ char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 
 /* REALLOC FILE */
-char _memset(char *, char, unsigned int);
+char *_memset(char *, char, unsigned int);
 void ffree(char **);
-void *_realloc(void *. unsigned int, unsigned int);
+void *_realloc(void *, unsigned int, unsigned int);
 
 /* STRING1 FILE */
 char *_strcpy(char *, char *);
@@ -216,7 +216,7 @@ void free_list(list_t **);
 /* LISTS1 FILE */
 size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
-size_t print_list(onst list_t *);
+size_t print_list(const list_t *);
 list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 
